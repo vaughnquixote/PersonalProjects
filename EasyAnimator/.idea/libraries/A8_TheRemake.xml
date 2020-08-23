@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="A8-TheRemake">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Archive 3.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Archive 2.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Archive.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

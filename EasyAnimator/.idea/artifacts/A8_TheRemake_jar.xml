@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="A8-TheRemake:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/A8_TheRemake_jar</output-path>
+    <root id="archive" name="A8-TheRemake.jar">
+      <element id="module-output" name="A8-TheRemake" />
+    </root>
+  </artifact>
+</component>

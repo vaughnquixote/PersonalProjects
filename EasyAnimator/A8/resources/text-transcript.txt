@@ -1,0 +1,66 @@
+Name: disk1
+Type: rectangle
+Min corner: (45.0,130.0), xWidth: 20.0, yHeight: 30.0, Color: (0,49,90)
+Appears at t = 1
+Disappears at t = 302
+Name: disk2
+Type: rectangle
+Min corner: (22.0,160.0), xWidth: 65.0, yHeight: 30.0, Color: (6,247,41)
+Appears at t = 1
+Disappears at t = 302
+Name: disk3
+Type: rectangle
+Min corner: (0.0,190.0), xWidth: 110.0, yHeight: 30.0, Color: (11,45,175)
+Appears at t = 1
+Disappears at t = 302
+Shape disk1 moves from (45.0,130.0) to (45.0,130.0) from t=1 to t=1
+Shape disk1 moves from (45.0,130.0) to (45.0,130.0) from t=1 to t=25
+Shape disk1 moves from (45.0,130.0) to (45.0,0.0) from t=25 to t=35
+Shape disk1 moves from (45.0,0.0) to (45.0,0.0) from t=35 to t=36
+Shape disk1 moves from (45.0,0.0) to (345.0,0.0) from t=36 to t=46
+Shape disk1 moves from (345.0,0.0) to (345.0,0.0) from t=46 to t=47
+Shape disk1 moves from (345.0,0.0) to (345.0,190.0) from t=47 to t=57
+Shape disk1 moves from (345.0,190.0) to (345.0,190.0) from t=57 to t=89
+Shape disk1 moves from (345.0,190.0) to (345.0,0.0) from t=89 to t=99
+Shape disk1 moves from (345.0,0.0) to (345.0,0.0) from t=99 to t=100
+Shape disk1 moves from (345.0,0.0) to (195.0,0.0) from t=100 to t=110
+Shape disk1 moves from (195.0,0.0) to (195.0,0.0) from t=110 to t=111
+Shape disk1 moves from (195.0,0.0) to (195.0,160.0) from t=111 to t=121
+Shape disk1 moves from (195.0,160.0) to (195.0,160.0) from t=121 to t=153
+Shape disk1 moves from (195.0,160.0) to (195.0,0.0) from t=153 to t=163
+Shape disk1 moves from (195.0,0.0) to (195.0,0.0) from t=163 to t=164
+Shape disk1 moves from (195.0,0.0) to (45.0,0.0) from t=164 to t=174
+Shape disk1 moves from (45.0,0.0) to (45.0,0.0) from t=174 to t=175
+Shape disk1 moves from (45.0,0.0) to (45.0,190.0) from t=175 to t=185
+Shape disk1 moves from (45.0,190.0) to (45.0,190.0) from t=185 to t=217
+Shape disk1 moves from (45.0,190.0) to (45.0,0.0) from t=217 to t=227
+Shape disk1 moves from (45.0,0.0) to (45.0,0.0) from t=227 to t=228
+Shape disk1 moves from (45.0,0.0) to (345.0,0.0) from t=228 to t=238
+Shape disk1 moves from (345.0,0.0) to (345.0,0.0) from t=238 to t=239
+Shape disk1 moves from (345.0,0.0) to (345.0,130.0) from t=239 to t=249
+Shape disk1 changes color from (0,49,90) to (0,255,0) from t=249 to t=257
+Shape disk1 moves from (345.0,130.0) to (345.0,130.0) from t=257 to t=302
+Shape disk2 moves from (22.0,160.0) to (22.0,160.0) from t=1 to t=1
+Shape disk2 moves from (22.0,160.0) to (22.0,160.0) from t=1 to t=57
+Shape disk2 moves from (22.0,160.0) to (22.0,0.0) from t=57 to t=67
+Shape disk2 moves from (22.0,0.0) to (22.0,0.0) from t=67 to t=68
+Shape disk2 moves from (22.0,0.0) to (172.0,0.0) from t=68 to t=78
+Shape disk2 moves from (172.0,0.0) to (172.0,0.0) from t=78 to t=79
+Shape disk2 moves from (172.0,0.0) to (172.0,190.0) from t=79 to t=89
+Shape disk2 moves from (172.0,190.0) to (172.0,190.0) from t=89 to t=185
+Shape disk2 moves from (172.0,190.0) to (172.0,0.0) from t=185 to t=195
+Shape disk2 moves from (172.0,0.0) to (172.0,0.0) from t=195 to t=196
+Shape disk2 moves from (172.0,0.0) to (322.0,0.0) from t=196 to t=206
+Shape disk2 moves from (322.0,0.0) to (322.0,0.0) from t=206 to t=207
+Shape disk2 moves from (322.0,0.0) to (322.0,160.0) from t=207 to t=217
+Shape disk2 changes color from (6,247,41) to (0,255,0) from t=217 to t=225
+Shape disk2 moves from (322.0,160.0) to (322.0,160.0) from t=225 to t=302
+Shape disk3 moves from (0.0,190.0) to (0.0,190.0) from t=1 to t=1
+Shape disk3 moves from (0.0,190.0) to (0.0,190.0) from t=1 to t=121
+Shape disk3 moves from (0.0,190.0) to (0.0,0.0) from t=121 to t=131
+Shape disk3 moves from (0.0,0.0) to (0.0,0.0) from t=131 to t=132
+Shape disk3 moves from (0.0,0.0) to (300.0,0.0) from t=132 to t=142
+Shape disk3 moves from (300.0,0.0) to (300.0,0.0) from t=142 to t=143
+Shape disk3 moves from (300.0,0.0) to (300.0,190.0) from t=143 to t=153
+Shape disk3 changes color from (11,45,175) to (0,255,0) from t=153 to t=161
+Shape disk3 moves from (300.0,190.0) to (300.0,190.0) from t=161 to t=302

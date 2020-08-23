@@ -1,0 +1,82 @@
+Matthew Gurman
+Vaughn Franz
+03/28/2020
+
+TODO LIST
+
+- new view which houses JFrame class and JPanel class (DrawArea)
+- start, resume, and restart
+- looping/playback
+- change speed of animation being played
+- command line option for playback
+- tests
+   - SVG View
+   - New Action Hierarchy
+   - Controller
+   - newer methods on Shapes
+   - HOW TO RUN THE TESTS
+
+
+The package cs5004.Animator.Model contains all the files for the model of a simple 2D animator. The
+main interfaces are AnimatorModel, Action, and Shape.
+
+The AnimatorModel hierarchy is the main part of the model which stores all of the data for the
+animation. It holds a Hashtable of Shapes and an ArrayList of Actions. The keys for the shapes in
+the Hashtable are strings which are meant to be the names of the shapes which can be referred to
+throughout the duration of the animation. This file contains all of the necessary methods for adding
+and removing shapes from the animation, and accessing a given shape for mutation. It also contains
+the methods necessary for adding and removing actions from the animation.
+
+The Shape hierarchy represents all of the shapes that may appear in the animation. So far, Ovals and
+Rectangles are represented. Each shape of the animation must have a unique name and a layer on which
+it appears. The shape also contains all of the information that describes it, including the time at
+which it appears, time at which it disappears, its dimension, and its color. The shapes can be
+mutated in each of the ways that actions can be made on them, a change in size, a change in color,
+and a change in location (movement). For now, we are not sure if based on the details of the
+animation the shapes will be mutated.
+
+The Action hierarchy represents all of the actions that may happen on a given shape in the
+animation. So far, ReSize, ReColor and Move actions are represented. Each action contains a link to
+the shape on which it acts, the starting time, the ending time, and the beginning and ending states
+of the shape for that action. We included both beginning and ending states at this time in the case
+of storing multiple actions on the same shape, we were not sure if the shapes would be mutated along
+the way as the animation played so the starting values seemed that they may be necessary.
+
+Our design to bring the Animator to life was driven by a view interface that implemented three kinds
+of views: a visual view, a text view, and an SVG view. On top of that, we implemented a controller
+to mediate the interaction between the controller and the view. The main mechanism of the controller
+ was to pass the list of shapes, with all of their actions stored in the, to the views. Each view
+ used the shape list to build its output.
+
+The main changes we made to our model were the refactoring of the action hierarchy. We decided to
+remove the abstract class and bring all action types into one action class.  This was better
+supported by the Animation Builder and helped us build our views.
+
+To build our SVG View, we added methods on shapes and actions to generate their own SVG text, and
+then give it to the view. We thought this was the best design because it was the most object
+oriented. Each object got its own string.
+
+---------------------------------------------------------------------------------------------
+
+Every change we made:
+
+We changed the action hierarchy. We changed this because initially our actions did not store all of
+the data for the attributes of the shape at both the beginning and end of the action. For Assignment
+ 7 instead, we had each class only store the information we thought was necessary for the
+ transformation. This was insufficient for the linear interpolation.
+
+We also added a list of all of the actions that happen to a given shape to the shape class itself.
+We felt that this was useful to increase the efficiency of the ongoing modification of the shapes
+that we did in the visual view. It provided easy access to the actions needed to change the shape's
+ data.
+
+We added several methods to the Model to accommodate this new design.
+
+We also added several methods to the shapes and actions themselves to allow them to generate their
+own string representations for the textual view and the SVG view.
+
+We added a method to the shapes which mutated them for a current time passed as a parameter. This
+accompanied the design change above.
+
+We added a method to the model which created and returned copies of all of the shapes that were in
+the model.
