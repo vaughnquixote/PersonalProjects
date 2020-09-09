@@ -1,0 +1,82 @@
+,business_id,name,stars,review_count,attributes,categories,hours,LocationKey,X1
+208,i3b5SJl54H1FHCQlgH5RMg,Wellesley Subway Station,2.5,9,,"Hotels & Travel, Train Stations",,209,208.0
+394,MuIyn6lzSRZzUwTtEjkj2w,College Subway Station,3.0,5,,"Hotels & Travel, Transportation, Public Transportation, Departments of Motor Vehicles, Public Services & Government",,395,394.0
+846,n7i_Ioh9Ip74kZ9QCwBOVg,Bay Subway Station,3.0,3,,"Train Stations, Public Services & Government, Hotels & Travel",,847,846.0
+953,cSTygRKb-wX0cDausQG5FA,45 Kipling Bus,4.5,7,,"Public Transportation, Transportation, Hotels & Travel",,954,953.0
+956,xdzR2Qt150pVAreGv811uQ,Ossington Subway Station,3.5,9,,"Transportation, Hotels & Travel, Train Stations, Public Transportation",,957,956.0
+1346,kMBQAdFsSbinhBn0qReNWQ,Coach Canada Fallsview Casino Shuttle,3.5,3,,"Transportation, Public Transportation, Hotels & Travel",,1347,1346.0
+1440,wXtE0iV1m6OCr-dOCfvF6Q,Pape Subway Station,3.5,8,,"Public Transportation, Train Stations, Transportation, Hotels & Travel",,1441,1440.0
+1867,er1Dcbk6q45kFjQkQ_pKSA,Exhibition Go Station,3.5,4,,"Hotels & Travel, Transportation, Public Transportation",,1868,1867.0
+2174,4APHDi5xxbV0JhgDRYAzFw,St Patrick Subway Station,3.5,5,,"Train Stations, Hotels & Travel, Transportation, Public Services & Government, Departments of Motor Vehicles, Public Transportation",,2175,2174.0
+2319,W3Z0kJImaaDM2QK0PaVElQ,Dundas Station,3.0,10,,"Transportation, Public Transportation, Hotels & Travel",,2320,2319.0
+2479,t8fd_gY5FGb0AxLPSHLZIA,TTC- 61 Avenue Rd North Bus,2.5,3,,"Hotels & Travel, Public Transportation, Transportation, Public Services & Government",,2480,2479.0
+2571,li99_TrLe0pyXZRBoOqkBA,Sheppard West Station,4.5,6,,"Transportation, Public Transportation, Hotels & Travel, Train Stations","{'Monday': '6:0-2:30', 'Tuesday': '6:0-2:30', 'Wednesday': '6:0-2:30', 'Thursday': '6:0-2:30', 'Friday': '6:0-2:30', 'Saturday': '6:0-2:30', 'Sunday': '8:0-2:30'}",2572,2571.0
+2884,6pEyG24l1R9T3pnl7RET6Q,Islington Station,2.5,14,,"Hotels & Travel, Public Transportation, Transportation",,2885,2884.0
+3212,mGLdVErt5PEpcvUJEk3CAg,Kipling Subway Station,3.5,20,,"Hotels & Travel, Public Transportation, Train Stations, Transportation","{'Monday': '6:0-2:0', 'Tuesday': '6:0-2:0', 'Wednesday': '6:0-2:0', 'Thursday': '6:0-2:0', 'Friday': '6:0-2:0', 'Saturday': '6:0-2:0', 'Sunday': '6:0-2:0'}",3213,3212.0
+3295,83V1E_ePwuLMW5EI40fIBQ,Finch GO Bus Terminal,3.0,8,,"Transportation, Hotels & Travel, Public Transportation",,3296,3295.0
+3310,7bUNv68xe0pPsjvQWkCI-w,511 Bathurst Streetcar,1.5,13,,"Local Services, Hotels & Travel, Transportation, Public Transportation","{'Monday': '0:0-0:0', 'Tuesday': '0:0-0:0', 'Wednesday': '0:0-0:0', 'Thursday': '0:0-0:0', 'Friday': '0:0-0:0', 'Saturday': '0:0-0:0', 'Sunday': '0:0-0:0'}",3311,3310.0
+3430,1HXi1zEVC9McQXdSyG6STg,Wilson Subway Station,2.5,4,"{'ByAppointmentOnly': 'False', 'WiFi': ""u'free'""}","Hotels & Travel, Public Transportation, Transportation",,3431,3430.0
+3510,TKJkLEWe53iNYwl-Beg6Zw,VIA Rail Canada,2.5,59,,"Hotels & Travel, Train Stations, Transportation",,3511,3510.0
+3745,RYrS9L8DupuwyHWYqeuayw,Greenwood Subway Station,2.5,3,,"Hotels & Travel, Transportation, Public Transportation",,3746,3745.0
+4640,23VXMGHyYl7piQSPMoGOyg,Lansdowne Subway Station,2.5,7,,"Public Transportation, Transportation, Hotels & Travel",,4641,4640.0
+4663,jJAFOI8OkeWhki80DeyxoQ,Toronto Limos,1.0,3,,"Hotels & Travel, Limos, Transportation, Public Transportation","{'Monday': '0:0-0:0', 'Tuesday': '0:0-0:0', 'Wednesday': '0:0-0:0', 'Thursday': '0:0-0:0', 'Friday': '0:0-0:0', 'Saturday': '0:0-0:0', 'Sunday': '0:0-0:0'}",4664,4663.0
+5047,gWStAX7cJt5lgji-ej4qdw,505 Dundas Streetcar,2.0,3,,"Transportation, Hotels & Travel, Public Transportation","{'Monday': '0:0-0:0', 'Tuesday': '0:0-0:0', 'Wednesday': '0:0-0:0', 'Thursday': '0:0-0:0', 'Friday': '0:0-0:0', 'Saturday': '0:0-0:0', 'Sunday': '0:0-0:0'}",5048,5047.0
+5086,UKpmaMZU_sKevo9AlaMPkA,Greyhound Bus Lines,1.5,108,,"Transportation, Hotels & Travel, Public Transportation","{'Monday': '5:0-23:59', 'Tuesday': '5:0-23:59', 'Wednesday': '5:0-23:59', 'Thursday': '5:0-23:59', 'Friday': '5:0-23:59', 'Saturday': '5:0-23:59', 'Sunday': '5:0-23:59'}",5087,5086.0
+5155,Q90LWaOS5vzcWItKN0sbsA,Sheppard-Yonge Station,3.0,5,"{'ByAppointmentOnly': 'False', 'WiFi': ""u'free'""}","Public Transportation, Transportation, Hotels & Travel, Train Stations",,5156,5155.0
+5368,1MHNHMn0RLwf7QEl4i6oSw,Main Street Subway Station,2.5,6,,"Public Services & Government, Train Stations, Public Transportation, Hotels & Travel, Transportation",,5369,5368.0
+5814,2nrgO0iMljPlOj8cY6zCKg,Kennedy Station,3.0,8,,"Hotels & Travel, Public Transportation, Transportation",,5815,5814.0
+5890,yGgpH8mY8INpGLq9arxmYg,63 Ossington Bus,4.0,9,,"Hotels & Travel, Public Transportation, Transportation",,5891,5890.0
+6055,msD4YlKD2dHaTKQWuTWgqQ,Long Branch GO Station,2.5,5,,"Transportation, Hotels & Travel, Public Transportation",,6056,6055.0
+6104,kVEQoRHbbmcUb0FMtaAxmA,Go Transit,2.5,55,,"Transportation, Hotels & Travel, Public Transportation",,6105,6104.0
+6282,98YzjvO45DRRvqrNv0hhAA,TTC - Toronto Transit Commision,2.0,182,,"Hotels & Travel, Transportation, Public Transportation",,6283,6282.0
+6797,ivWqUfAW6tTJxfH4WO5wgQ,Scarborough Centre Station,3.0,4,,"Transportation, Public Transportation, Hotels & Travel",,6798,6797.0
+6885,ukyKtxoBC2E7CWlhp6Eamw,Dundas West Station,3.5,5,,"Hotels & Travel, Public Transportation, Transportation",,6886,6885.0
+7176,-nxls3MGgAoy_DXFlE6P5w,Warden Station,4.0,4,,"Hotels & Travel, Train Stations",,7177,7176.0
+8094,17fB9l8NWZRWDbbAs8iqtw,Lawrence Station,3.5,3,,"Hotels & Travel, Public Transportation, Transportation",,8095,8094.0
+8323,SGld6m1YYDDmQ_KxWAbd4Q,Toronto Island Ferry,4.0,51,,"Hotels & Travel, Public Transportation, Transportation",,8324,8323.0
+8526,cIwYOpu2yJuVXtW44aQcrw,Museum Subway Station,4.5,10,,"Train Stations, Local Flavor, Hotels & Travel, Public Transportation, Public Services & Government, Transportation",,8527,8526.0
+8626,uTu6FrJYMfB6zKdjwLjB9g,Presto! card,1.5,116,,"Hotels & Travel, Public Transportation, Transportation",,8627,8626.0
+9059,w2P4TC9k372P_ZUyXIyzPA,Donlands Subway Station,3.0,3,,"Transportation, Hotels & Travel, Public Transportation",,9060,9059.0
+9383,vT5t652h_ekQh4K5787tEw,Queen Station,3.5,3,,"Hotels & Travel, Train Stations, Public Transportation, Transportation",,9384,9383.0
+9470,JRDDK3KyhCJWytpAnhKV0w,Runnymede Station,3.0,4,,"Train Stations, Public Transportation, Hotels & Travel, Transportation",,9471,9470.0
+9557,jqU51y6F5gurm1QC3L2eKg,Royal York Station,3.5,5,,"Public Transportation, Transportation, Hotels & Travel",,9558,9557.0
+9725,3kvyAFaf_x9xRBjlKBaA-Q,512 St. Clair Streetcar,3.5,3,,"Public Transportation, Transportation, Hotels & Travel",,9726,9725.0
+9864,92TA_nRt7Wtjf_WcRY8mFQ,Victoria Park Subway Station,3.0,4,,"Transportation, Public Transportation, Hotels & Travel",,9865,9864.0
+9970,BUPt_1QSJPaXGEnkvF_eKA,300 Bloor-Danforth Bus,3.5,3,,"Public Transportation, Transportation, Hotels & Travel","{'Monday': '2:0-5:30', 'Tuesday': '2:0-5:30', 'Wednesday': '2:0-5:30', 'Thursday': '2:0-5:30', 'Friday': '2:0-5:30', 'Saturday': '2:0-5:30', 'Sunday': '2:0-5:30'}",9971,9970.0
+10447,9KPAe-yb8A7V5mamx5quMw,High Park Subway Station,3.5,5,,"Hotels & Travel, Public Transportation, Transportation, Train Stations",,10448,10447.0
+11255,15tpk1N3mU9iyjsFpbnlOQ,900 Airport Rocket,4.0,16,,"Airport Shuttles, Transportation, Hotels & Travel, Public Transportation",,11256,11255.0
+11411,FIsgiBEDHHFCKrMrxWYe4Q,North York Centre Station,3.5,3,,"Hotels & Travel, Transportation, Public Transportation",,11412,11411.0
+11861,fXocVqbPpK2FPV1Dlp9HAA,King Station,2.5,8,,"Train Stations, Transportation, Hotels & Travel, Public Transportation",,11862,11861.0
+11919,U0Wm6w76PiuCDc21fAP3Vg,Keele Subway Station,3.0,5,,"Public Transportation, Train Stations, Hotels & Travel, Buses, Transportation",,11920,11919.0
+12256,al2-oxwySoXgQpejsG2HtQ,St Clair West Subway Station,3.0,7,,"Public Transportation, Transportation, Hotels & Travel, Public Services & Government, Train Stations",,12257,12256.0
+12319,u3dkRcKxeE-uTu5bpTPr2Q,Castle Frank Subway Station,2.5,3,,"Transportation, Hotels & Travel, Public Transportation",,12320,12319.0
+13114,dMuwrXqkNMJKx7JbbETTHQ,Mimico GO Station,3.0,5,,"Hotels & Travel, Departments of Motor Vehicles, Public Services & Government, Train Stations",,13115,13114.0
+13229,TcCfTEOCxH5-4ZEVRqLR_Q,Bathurst Subway Station,2.5,11,,"Public Transportation, Transportation, Train Stations, Hotels & Travel",,13230,13229.0
+13353,utQ8HWeBS4wu4f8vI2p6Mg,510 Spadina Streetcar,3.5,11,,"Public Transportation, Transportation, Hotels & Travel","{'Monday': '0:0-0:0', 'Tuesday': '0:0-0:0', 'Wednesday': '0:0-0:0', 'Thursday': '0:0-0:0', 'Friday': '0:0-0:0', 'Saturday': '0:0-0:0', 'Sunday': '0:0-0:0'}",13354,13353.0
+13458,JqNYF2EFzVmy3iUV9hsZrQ,St. Andrew Subway Station,3.0,5,,"Hotels & Travel, Public Transportation, Transportation",,13459,13458.0
+13505,Mp0jeFRzl2HXbPPBYbL9iA,Don Mills Subway Station,3.0,10,"{'WiFi': ""u'free'"", 'ByAppointmentOnly': 'False'}","Transportation, Hotels & Travel, Public Transportation",,13506,13505.0
+14014,xWAPz_ZkS2D6zxReIKgW_g,Vaughan Mills Shopping Centre Shuttle,4.5,3,,"Local Services, Public Transportation, Transportation, Hotels & Travel",,14015,14014.0
+14027,ZCKVGyhDusWZdDNaML62-Q,St. George Station,3.0,6,,"Hotels & Travel, Public Transportation, Transportation",,14028,14027.0
+14896,BK65zrlMIaXo8ybbBJ3PuQ,Spadina Subway Station,3.0,15,,"Train Stations, Public Transportation, Hotels & Travel, Transportation","{'Monday': '6:0-2:0', 'Tuesday': '6:0-2:0', 'Wednesday': '6:0-2:0', 'Thursday': '6:0-2:0', 'Friday': '6:0-2:0', 'Saturday': '6:30-2:0', 'Sunday': '6:30-2:0'}",14897,14896.0
+15269,GbSLC3OriOFLmYFQ48NvTA,Bloor-Yonge Subway Station,3.0,18,,"Train Stations, Public Transportation, Transportation, Hotels & Travel",,15270,15269.0
+15647,CuHnrMec5uIKdDOxp3A02g,Megabus,2.5,68,,"Transportation, Hotels & Travel, Public Transportation",,15648,15647.0
+15761,wCvwfvtvrPPRssBqpgYlhg,Rosedale Subway Station,3.5,3,,"Transportation, Hotels & Travel, Public Transportation",,15762,15761.0
+15905,nHeeREbCrPvVtfZAtHUzOA,47 Lansdowne Bus,3.5,3,,"Public Transportation, Transportation, Hotels & Travel",,15906,15905.0
+16086,lwZg8dDC4n3r5E9vbdIw9w,Yorkdale Subway Station,3.5,5,,"Transportation, Hotels & Travel, Public Transportation",,16087,16086.0
+16282,L65LabyOfKn3pKXRrJ4FKw,Eglinton Subway Station,2.5,9,,"Transportation, Public Transportation, Hotels & Travel",,16283,16282.0
+16394,UIwXivZKMxdQwG7l_X7_qw,29 Dufferin Bus,2.0,11,,"Transportation, Hotels & Travel, Public Transportation","{'Monday': '0:0-0:0', 'Tuesday': '0:0-0:0', 'Wednesday': '0:0-0:0', 'Thursday': '0:0-0:0', 'Friday': '0:0-0:0', 'Saturday': '0:0-0:0', 'Sunday': '0:0-0:0'}",16395,16394.0
+16922,YX4pDgaxIAw1DWqIH87xKQ,Eglinton West Subway Station,3.5,5,,"Transportation, Train Stations, Hotels & Travel, Public Transportation",,16923,16922.0
+17265,Sg2l7S_huzkRLmk2NoeuSg,Union Station,3.5,113,"{'WiFi': ""u'free'""}","Hotels & Travel, Public Transportation, Transportation, Landmarks & Historical Buildings, Train Stations, Public Services & Government","{'Monday': '5:30-1:30', 'Tuesday': '5:30-1:30', 'Wednesday': '5:30-1:30', 'Thursday': '5:30-1:30', 'Friday': '5:30-1:30', 'Saturday': '5:30-1:30', 'Sunday': '5:30-1:30'}",17266,17265.0
+17290,z2r2hvbAyYIjO0u4C3U0_A,Dufferin Subway Station,3.0,7,,"Hotels & Travel, Train Stations, Transportation, Public Transportation",,17291,17290.0
+17549,iUEOBL98BI8zF7LFhmhabQ,Union Pearson Express,4.0,83,"{'WiFi': ""u'free'""}","Transportation, Public Transportation, Hotels & Travel",,17550,17549.0
+17747,XWKxmSw5ioWGLBzN1GAESw,Bloor GO Station,3.5,7,,"Train Stations, Transportation, Public Transportation, Hotels & Travel",,17748,17747.0
+17854,79mbDx8YR_0crxgyKSECUA,Dupont Subway Station,3.5,3,,"Public Transportation, Hotels & Travel, Transportation",,17855,17854.0
+18111,dDsGxTCrW5PA7dL0HuJUXQ,car2go Toronto,2.5,35,,"Public Transportation, Car Rental, Car Share Services, Hotels & Travel, Transportation, Automotive","{'Tuesday': '13:0-15:0', 'Thursday': '13:0-15:0'}",18112,18111.0
+18286,E9jpA9q_gQB3abo9Ccq4Lg,Jane Station,2.5,4,,"Train Stations, Hotels & Travel, Public Transportation, Transportation",,18287,18286.0
+18520,eEp7GR7EcUt6XCs8KTSHVQ,504 King Streetcar,3.0,21,,"Public Transportation, Transportation, Hotels & Travel","{'Monday': '5:0-2:30', 'Tuesday': '5:0-2:30', 'Wednesday': '5:0-2:30', 'Thursday': '5:0-2:30', 'Friday': '5:0-2:30', 'Saturday': '5:0-2:30', 'Sunday': '5:0-2:30'}",18521,18520.0
+18733,YjCeMzVBRBze2BG6QH5Ypw,Broadview Subway Station,3.5,8,,"Public Transportation, Train Stations, Transportation, Hotels & Travel","{'Monday': '8:0-23:0', 'Tuesday': '8:0-23:0', 'Wednesday': '8:0-23:0', 'Thursday': '8:0-23:0', 'Friday': '8:0-23:0', 'Saturday': '8:0-23:0', 'Sunday': '8:0-23:0'}",18734,18733.0
+18934,56DmsnIXbm3yDWuF1D-xDQ,Davisville Subway Station,3.0,7,,"Public Transportation, Transportation, Hotels & Travel",,18935,18934.0
+19278,SlXpEjlZW-SSGcbRSh_iJQ,Sherbourne Station,2.0,6,,"Hotels & Travel, Transportation, Public Transportation",,19279,19278.0
+19488,zbtVAf-kgb9ip994sXcaOg,Downsview Park Station,4.0,3,,"Hotels & Travel, Public Transportation, Buses, Transportation, Trains, Bus Stations",,19489,19488.0
+19796,NW1-x6TFmwyPoz6lEfxPjQ,Sueland Moving & Storage,5.0,3,{'RestaurantsDelivery': 'True'},"Shopping, Hotels & Travel, Transportation, Home Services, Home & Garden, Public Transportation, Furniture Assembly, Packing Services, Junk Removal & Hauling, Self Storage, Movers, Local Services","{'Monday': '7:0-19:0', 'Tuesday': '7:0-19:0', 'Wednesday': '7:0-19:0', 'Thursday': '7:0-19:0', 'Friday': '7:0-19:0', 'Saturday': '7:0-19:0', 'Sunday': '7:0-19:0'}",19797,19796.0
+20267,LwpxGHPZiip4utRMvGoZBg,501 Queen Streetcar,2.5,27,,"Transportation, Hotels & Travel, Public Transportation","{'Monday': '0:0-0:0', 'Tuesday': '0:0-0:0', 'Wednesday': '0:0-0:0', 'Thursday': '0:0-0:0', 'Friday': '0:0-0:0', 'Saturday': '0:0-0:0', 'Sunday': '0:0-0:0'}",20268,20267.0

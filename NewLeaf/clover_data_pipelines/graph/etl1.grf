@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="magurman" created="Wed Jul 22 12:13:46 EDT 2020" guiVersion="5.7.0.21" id="1595434547495" licenseCode="CLP1DNORTH55001149EX" name="etl1" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata4">
+<Record fieldDelimiter="|" name="crimeChart" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="Name" type="string"/>
+<Field name="countTennis" type="long"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata5">
+<Record fieldDelimiter="|" name="crimeChart_1" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="Name" type="string"/>
+<Field name="countTennis" type="long"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata3">
+<Record fieldDelimiter="|" name="joined" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="courtName" type="string"/>
+<Field name="parkName" type="string"/>
+<Field name="address" type="string"/>
+<Field name="district" type="string"/>
+<Field name="ward" type="string"/>
+<Field name="primary_permit_status" type="string"/>
+<Field name="asset_category" type="string"/>
+<Field name="lights" type="string"/>
+<Field name="surface_material" type="string"/>
+<Field name="gis_coordinate" type="string"/>
+<Field name="NeighbourhoodFK" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata0">
+<Record fieldDelimiter="|" name="neighbourhoodDb" recordDelimiter="\n" type="delimited">
+<Field delimiter="," name="NeighbourhoodPK" type="integer"/>
+<Field name="Name" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1">
+<Record fieldDelimiter="," name="V2_TennisCourts" previewAttachment="/Users/magurman/Downloads/V2_TennisCourts.csv" previewAttachmentCharset="UTF-8" quoteChar="both" quotedStrings="false" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="_" type="integer"/>
+<Field label="ID" name="ID" type="integer"/>
+<Field label="NAME" name="NAME" type="string"/>
+<Field label="Tennis Court Area" name="Tennis_Court_Area" type="string"/>
+<Field label="Park Name" name="Park_Name" type="string"/>
+<Field label="ADDRESS" name="ADDRESS" type="string"/>
+<Field label="DISTRICT" name="DISTRICT" type="string"/>
+<Field label="WARD" name="WARD" type="string"/>
+<Field label="Primary Permitting Status" name="Primary_Permitting_Status" type="string"/>
+<Field label="Asset category" name="Asset_category" type="string"/>
+<Field label="LIGHTS" name="LIGHTS" type="string"/>
+<Field label="Surface material" name="Surface_material" type="string"/>
+<Field label="GIS Coordinate_1" name="GIS_Coordinate_1" type="string"/>
+<Field eofAsDelimiter="true" label="neighbourhood" name="neighbourhood" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata2">
+<Record fieldDelimiter="," name="V2_TennisCourts_new" previewAttachment="/Users/magurman/Downloads/V2_TennisCourts.csv" previewAttachmentCharset="UTF-8" quoteChar="both" quotedStrings="false" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="_" type="integer"/>
+<Field label="ID" name="ID" type="integer"/>
+<Field label="NAME" name="NAME" type="string"/>
+<Field label="Tennis Court Area" name="Tennis_Court_Area" type="string"/>
+<Field label="Park Name" name="Park_Name" type="string"/>
+<Field label="ADDRESS" name="ADDRESS" type="string"/>
+<Field label="DISTRICT" name="DISTRICT" type="string"/>
+<Field label="WARD" name="WARD" type="string"/>
+<Field label="Primary Permitting Status" name="Primary_Permitting_Status" type="string"/>
+<Field label="Asset category" name="Asset_category" type="string"/>
+<Field label="LIGHTS" name="LIGHTS" type="string"/>
+<Field label="Surface material" name="Surface_material" type="string"/>
+<Field label="GIS Coordinate_1" name="GIS_Coordinate_1" type="string"/>
+<Field name="GIS_Coordinate_2" type="string"/>
+<Field delimiter="\n" eofAsDelimiter="true" label="neighbourhood" name="neighbourhood" type="string"/>
+<Field label="neighbourhoodFK" name="NeighborhoodPK" type="integer"/>
+</Record>
+</Metadata>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/MudHens" id="JDBC0" jdbcSpecific="MYSQL" name="pm5" password="iamamonster" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/MudHens" id="JDBC1" jdbcSpecific="MYSQL" name="pm5" password="iamamonster" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/MudHens?useSSL=false" id="JDBC2" jdbcSpecific="MYSQL" name="pm5_new" password="iamamonster" type="JDBC" user="root"/>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary/>
+</Global>
+<Phase number="0">
+<Node dbConnection="JDBC2" guiName="DatabaseReader" guiX="85" guiY="326" id="DATABASE_READER" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[SELECT * FROM NEIGHBORHOOD]]></attr>
+</Node>
+<Node cloverFields="courtName;parkName;address;district;ward;primary_permit_status;asset_category;lights;surface_material;gis_coordinate;NeighbourhoodFK" dbConnection="JDBC2" dbTable="TennisCourt" fieldMap="$courtName:=Name;$parkName:=ParkName;$address:=Address;$district:=District;$ward:=Ward;$primary_permit_status:=PermitStatus;$asset_category:=AssetCategory;$lights:=Lights;$surface_material:=SurfaceMaterial;$gis_coordinate:=GisCoordinates;$NeighbourhoodFK:=NeighbourhoodFK;" guiName="DatabaseWriter" guiX="635" guiY="206" id="DATABASE_WRITER" type="DB_OUTPUT_TABLE"/>
+<Node guiName="ExtHashJoin" guiX="333" guiY="206" id="EXT_HASH_JOIN" joinKey="$neighbourhood=$Name" type="EXT_HASH_JOIN">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.courtName = $in.0.NAME;
+	$out.0.parkName = $in.0.Park_Name;
+	$out.0.address = $in.0.ADDRESS;
+	$out.0.district = $in.0.DISTRICT;
+	$out.0.ward = $in.0.WARD;
+	$out.0.primary_permit_status = $in.0.Primary_Permitting_Status;
+	$out.0.asset_category = $in.0.Asset_category;
+	$out.0.lights = $in.0.LIGHTS;
+	$out.0.surface_material = $in.0.Surface_material;
+	$out.0.gis_coordinate = $in.0.GIS_Coordinate_1;
+	$out.0.NeighbourhoodFK = $in.1.NeighbourhoodPK;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node dataPolicy="lenient" fileURL="/Users/magurman/Downloads/V2_TennisCourts.csv" guiName="UniversalDataReader" guiX="75" guiY="110" id="UNIVERSAL_DATA_READER" quoteCharacter="&quot;" quotedStrings="true" skipFirstLine="false" trim="true" type="DATA_READER"/>
+<Edge fromNode="DATABASE_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge3" inPort="Port 1 (slave)" metadata="Metadata0" outPort="Port 0 (out)" toNode="EXT_HASH_JOIN:1"/>
+<Edge fromNode="EXT_HASH_JOIN:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="DATABASE_WRITER:0"/>
+<Edge fromNode="UNIVERSAL_DATA_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (driver)" metadata="Metadata1" outPort="Port 0 (output)" toNode="EXT_HASH_JOIN:0"/>
+</Phase>
+<Phase number="1">
+<Node dbConnection="JDBC2" guiName="DatabaseReader" guiX="222" guiY="375" id="DATABASE_READER1" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select Neighborhood.Name, count(distinct TennisCourt.Name) as cnt from Neighborhood inner join TennisCourt on Neighborhood.NeighborhoodPK = TennisCourt.NeighbourhoodFK group by Neighborhood.Name order by cnt desc]]></attr>
+</Node>
+<Node existingSheetsActions="CLEAR_SHEETS" fileURL="${DATAOUT_DIR}/crime_tenniscourt_neighbourhood_chart.xlsx" guiName="SpreadsheetDataWriter" guiX="448" guiY="363" id="SPREADSHEET_DATA_WRITER" sheet="Chart2" type="SPREADSHEET_WRITER" writeMode="OVERWRITE_SHEET_IN_MEMORY">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mapping>
+    <globalAttributes>
+        <orientation>VERTICAL</orientation>
+        <step>1</step>
+        <writeHeader>true</writeHeader>
+    </globalAttributes>
+    <defaultSkip>1</defaultSkip>
+    <headerGroups>
+        <headerGroup skip="1">
+            <cloverField>Name</cloverField>
+            <headerRanges>
+                <headerRange begin="A1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>countTennis</cloverField>
+            <headerRanges>
+                <headerRange begin="C1"/>
+            </headerRanges>
+        </headerGroup>
+    </headerGroups>
+</mapping>
+]]></attr>
+</Node>
+<Edge fromNode="DATABASE_READER1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (input)" metadata="Metadata4" outPort="Port 0 (out)" toNode="SPREADSHEET_DATA_WRITER:0"/>
+</Phase>
+<Phase number="2">
+<Node dbConnection="JDBC2" guiName="DatabaseReader" guiX="294" guiY="470" id="DATABASE_READER2" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select Neighborhood.Name, count(distinct TennisCourt.Name) as cnt from Neighborhood inner join TennisCourt on Neighborhood.NeighborhoodPK = TennisCourt.NeighbourhoodFK where PermitStatus = 'Public' and Lights = 'Yes' group by Neighborhood.Name order by cnt desc]]></attr>
+</Node>
+<Node existingSheetsActions="CLEAR_SHEETS" fileURL="${DATAOUT_DIR}/crime_tenniscourt_neighbourhood_chart.xlsx" guiName="SpreadsheetDataWriter" guiX="571" guiY="489" id="SPREADSHEET_DATA_WRITER1" sheet="Chart3" type="SPREADSHEET_WRITER" writeMode="OVERWRITE_SHEET_IN_MEMORY">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mapping>
+    <globalAttributes>
+        <orientation>VERTICAL</orientation>
+        <step>1</step>
+        <writeHeader>true</writeHeader>
+    </globalAttributes>
+    <defaultSkip>1</defaultSkip>
+    <headerGroups>
+        <headerGroup skip="1">
+            <cloverField>Name</cloverField>
+            <headerRanges>
+                <headerRange begin="A1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>countTennis</cloverField>
+            <headerRanges>
+                <headerRange begin="B1"/>
+            </headerRanges>
+        </headerGroup>
+    </headerGroups>
+</mapping>
+]]></attr>
+</Node>
+<Edge fromNode="DATABASE_READER2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge4" inPort="Port 0 (input)" metadata="Metadata4" outPort="Port 0 (out)" toNode="SPREADSHEET_DATA_WRITER1:0"/>
+</Phase>
+</Graph>

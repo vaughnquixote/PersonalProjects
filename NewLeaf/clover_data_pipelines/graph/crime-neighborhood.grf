@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="nolanbock" created="Thu Jul 23 11:26:54 EDT 2020" guiVersion="5.6.2.13" id="1595518328892" licenseCode="Unlicensed" name="crime-neighborhood" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata4">
+<Record fieldDelimiter="," name="CrimeRatingKey" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field delimiter="," name="Neighborhood" type="string"/>
+<Field delimiter="," name="AvgStars" type="decimal"/>
+<Field name="NumCrimes" type="long"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata2">
+<Record fieldDelimiter="|" name="CrimesPerNeighborhood" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field delimiter="|" name="NeighborhoodPK" type="integer"/>
+<Field delimiter="|" name="Neighborhood" type="string"/>
+<Field name="NumCrimes" type="long"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata0">
+<Record fieldDelimiter=";" name="NeighboodStars" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="NeighborhoodPK" type="integer"/>
+<Field name="Neighborhood" type="string"/>
+<Field name="AvgStars" type="decimal"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata3" previewAttachmentCharset="UTF-8">
+<Record fieldDelimiter="|" name="NeighborhoodStarCrimes" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="NeighborhoodPK" type="integer"/>
+<Field delimiter="|" name="Neighborhood" type="string"/>
+<Field delimiter="|" length="12" name="AvgStars" scale="2" trim="true" type="decimal"/>
+<Field name="NumCrimes" trim="true" type="long"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1">
+<Record fieldDelimiter="|" name="NumCrimes" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="Neighborhood" type="string"/>
+<Field name="NumCrimes" type="integer"/>
+</Record>
+</Metadata>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/MudHens?useSSL=false" id="JDBC1" jdbcSpecific="MYSQL" name="GoodConnection" password="Te3HacaS!!" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/MudHens" id="JDBC0" jdbcSpecific="MYSQL" name="NewConnection" password="Te3HacaS!!" type="JDBC" user="root"/>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary/>
+</Global>
+<Phase number="0">
+<Node aggregateKey="Neighborhood;AvgStars;NeighborhoodPK" guiName="Aggregate" guiX="414" guiY="115" id="AGGREGATE" mapping="$NeighborhoodPK:=$NeighborhoodPK;$Neighborhood:=$Neighborhood;$AvgStars:=$AvgStars;" sorted="false" type="AGGREGATE"/>
+<Node aggregateKey="NeighborhoodPK;Neighborhood;NumCrimes" guiName="Aggregate" guiX="414" guiY="284" id="AGGREGATE1" mapping="$NeighborhoodPK:=$NeighborhoodPK;$Neighborhood:=$Neighborhood;$NumCrimes:=$NumCrimes;" type="AGGREGATE"/>
+<Node dbConnection="JDBC1" guiName="DatabaseReader" guiX="173" guiY="284" id="DATABASE_READER" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[SELECT NeighborhoodFK as NeighborhoodPK, Name, Count(*) as NumCrimes
+FROM 
+(SELECT NeighborHoodFK FROM MudHens.Crime) as crimes
+JOIN Mudhens.Neighborhood WHERE NeighborhoodFK = NeighborhoodPK
+GROUP BY Name
+ORDER BY NeighborhoodFK;]]></attr>
+</Node>
+<Node dbConnection="JDBC1" guiName="DatabaseReader" guiX="173" guiY="115" id="DATABASE_READER1" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[SELECT NeighborhoodFK as NeighborhoodPK, Name as Neighborhood, AVG(Stars) as AvgStars FROM
+(SELECT NeighborhoodFK, Stars FROM
+(SELECT Stars, LocationFK FROM Mudhens.Business) as stars
+JOIN Location WHERE LocationPK = LocationFK) as neighborhoods
+JOIN Neighborhood WHERE NeighborhoodFK = NeighborhoodPK
+GROUP BY Name
+ORDER BY NeighborhoodFK ASC;]]></attr>
+</Node>
+<Node dbConnection="JDBC1" dbTable="CrimeRatings" fieldMap="$NeighborhoodPK:=NeighborhoodFK;$Neighborhood:=Neighborhood;$AvgStars:=AvgStars;$NumCrimes:=NumCrimes;" guiName="DatabaseWriter" guiX="928" guiY="196" id="DATABASE_WRITER" type="DB_OUTPUT_TABLE"/>
+<Node guiName="ExtHashJoin" guiX="667" guiY="196" id="EXT_HASH_JOIN" joinKey="$NeighborhoodPK=$NeighborhoodPK" type="EXT_HASH_JOIN">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.NeighborhoodPK = $in.1.NeighborhoodPK;
+	$out.0.Neighborhood = $in.0.Neighborhood;
+	$out.0.AvgStars = $in.0.AvgStars;
+	$out.0.NumCrimes = $in.1.NumCrimes;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="AGGREGATE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge8" inPort="Port 0 (driver)" metadata="Metadata0" outPort="Port 0 (out)" toNode="EXT_HASH_JOIN:0"/>
+<Edge fromNode="AGGREGATE1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge9" inPort="Port 1 (slave)" metadata="Metadata2" outPort="Port 0 (out)" toNode="EXT_HASH_JOIN:1"/>
+<Edge fromNode="DATABASE_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge4" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="AGGREGATE1:0"/>
+<Edge fromNode="DATABASE_READER1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (out)" toNode="AGGREGATE:0"/>
+<Edge fromNode="EXT_HASH_JOIN:0" guiBendpoints="" guiRouter="Manhattan" id="Edge19" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="DATABASE_WRITER:0"/>
+</Phase>
+<Phase number="1">
+<Node dbConnection="JDBC1" guiName="DatabaseReader" guiX="414" guiY="410" id="DATABASE_READER2" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[SELECT Neighborhood,AvgStars,NumCrimes FROM Mudhens.CrimeRatings;]]></attr>
+</Node>
+<Node existingSheetsActions="REMOVE_SHEETS" fileURL="${DATAOUT_DIR}/crime-neighborhoods.xlsx" guiName="SpreadsheetDataWriter" guiX="831" guiY="410" id="SPREADSHEET_DATA_WRITER" type="SPREADSHEET_WRITER" writeMode="OVERWRITE_SHEET_IN_MEMORY">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mapping>
+    <globalAttributes>
+        <orientation>VERTICAL</orientation>
+        <step>1</step>
+        <writeHeader>true</writeHeader>
+    </globalAttributes>
+    <defaultSkip>1</defaultSkip>
+    <headerGroups>
+        <headerGroup skip="1">
+            <cloverField>Neighborhood</cloverField>
+            <headerRanges>
+                <headerRange begin="A1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>AvgStars</cloverField>
+            <headerRanges>
+                <headerRange begin="B1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>NumCrimes</cloverField>
+            <headerRanges>
+                <headerRange begin="C1"/>
+            </headerRanges>
+        </headerGroup>
+    </headerGroups>
+</mapping>
+]]></attr>
+</Node>
+<Edge fromNode="DATABASE_READER2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge20" inPort="Port 0 (input)" metadata="Metadata4" outPort="Port 0 (out)" toNode="SPREADSHEET_DATA_WRITER:0"/>
+</Phase>
+</Graph>

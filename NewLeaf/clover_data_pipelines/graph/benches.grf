@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="brianward" created="Wed Jul 22 16:18:40 EDT 2020" guiVersion="5.6.2.13" id="1595506205290" licenseCode="CLP1DNORTH72258082EX" name="benches" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata0">
+<Record fieldDelimiter="|" name="avg_price" recordDelimiter="\n" type="delimited">
+<Field name="Name" type="string"/>
+<Field length="25" name="Average_Price" scale="4" type="decimal"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata5">
+<Record fieldDelimiter="|" name="BenchCountData" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="Neighborhood" type="string"/>
+<Field name="BenchCount" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata9">
+<Record fieldDelimiter="|" name="finalRead" recordDelimiter="\n" type="delimited">
+<Field name="Neighborhood" type="string"/>
+<Field name="BenchCount" type="integer"/>
+<Field name="AvgPrice" type="number"/>
+<Field name="AvgPricePerBench" type="number"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata7" previewAttachmentCharset="UTF-8">
+<Record fieldDelimiter="|" name="JoinedData" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="NeighborhoodFK" type="integer"/>
+<Field name="Neighborhood" type="string"/>
+<Field name="BenchCount" trim="true" type="integer"/>
+<Field length="12" name="AvgPrice" scale="2" trim="true" type="decimal"/>
+<Field name="AvgPricePerBench" type="decimal"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata8">
+<Record fieldDelimiter="|" name="newDBInput" recordDelimiter="\n" type="delimited">
+<Field name="NeighborhoodPK" type="integer"/>
+<Field name="Name" type="string"/>
+<Field length="25" name="Average_Price" scale="4" type="decimal"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1">
+<Record fieldDelimiter="|" name="recordName1" recordDelimiter="\n" type="delimited"/>
+<Sql connection="JDBC0" sqlOptimization="true" sqlQuery="SELECT NeighborhoodPK, Name, AVG(Price) AS Average_Price&#10;FROM&#10;(SELECT AirPK, Bedrooms, CAST(REPLACE(Price,'$' ,'') AS UNSIGNED) As Price, N.Name, NeighborhoodPK&#10;FROM AirBnB A&#10;LEFT JOIN&#10;location L&#10;ON A.LocationFk = L.LocationPK&#10;LEFT JOIN &#10;Neighborhood N&#10;ON L.NeighborhoodFK = N.NeighborhoodPK&#10;WHERE Bedrooms = 3) Temp&#10;GROUP BY Name;" unknownJdbcTypesAsString="true"/>
+</Metadata>
+<Metadata id="Metadata10">
+<Record fieldDelimiter="|" name="recordName2" recordDelimiter="\n" type="delimited"/>
+<Sql connection="JDBC1" sqlOptimization="true" sqlQuery="SELECT Neighborhood, BenchCount, AvgPrice, AvgPricePerBench &#10;FROM BenchPrice&#10;ORDER BY AvgPrice DESC;" unknownJdbcTypesAsString="true"/>
+</Metadata>
+<Metadata id="Metadata3">
+<Record fieldDelimiter="," name="V1_Benches" previewAttachment="${DATAIN_DIR}/V1_Benches.csv" previewAttachmentCharset="UTF-8" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field label="" name="_" type="integer"/>
+<Field label="_id" name="_id" type="integer"/>
+<Field label="OBJECTID" name="OBJECTID" type="integer"/>
+<Field label="ID" name="ID" type="string"/>
+<Field label="ADDRESSNUMBERTEXT" name="ADDRESSNUMBERTEXT" type="string"/>
+<Field label="ADDRESSSTREET" name="ADDRESSSTREET" type="string"/>
+<Field label="FRONTINGSTREET" name="FRONTINGSTREET" type="string"/>
+<Field label="SIDE" name="SIDE" type="string"/>
+<Field label="FROMSTREET" name="FROMSTREET" type="string"/>
+<Field label="DIRECTION" name="DIRECTION" type="string"/>
+<Field label="SITEID" name="SITEID" type="integer"/>
+<Field label="WARD" name="WARD" type="integer"/>
+<Field label="BIA" name="BIA" type="string"/>
+<Field label="ASSETTYPE" name="ASSETTYPE" type="string"/>
+<Field label="STATUS" name="STATUS" type="string"/>
+<Field label="BARCODE" name="BARCODE" type="string"/>
+<Field label="SDE_STATE_ID" name="SDE_STATE_ID" type="integer"/>
+<Field label="X" name="X" type="number"/>
+<Field label="Y" name="Y" type="number"/>
+<Field label="LONGITUDE" name="LONGITUDE" type="number"/>
+<Field label="LATITUDE" name="LATITUDE" type="number"/>
+<Field label="geometry" name="geometry" type="string"/>
+<Field eofAsDelimiter="true" label="neighbourhood" name="neighbourhood" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata6">
+<Record fieldDelimiter="," name="V1_Benches" previewAttachment="${DATAIN_DIR}/V1_Benches.csv" previewAttachmentCharset="UTF-8" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field label="" name="_" type="integer"/>
+<Field label="_id" name="_id" type="integer"/>
+<Field label="OBJECTID" name="OBJECTID" type="integer"/>
+<Field label="ID" name="ID" type="string"/>
+<Field label="ADDRESSNUMBERTEXT" name="ADDRESSNUMBERTEXT" type="string"/>
+<Field label="ADDRESSSTREET" name="ADDRESSSTREET" type="string"/>
+<Field label="FRONTINGSTREET" name="FRONTINGSTREET" type="string"/>
+<Field label="SIDE" name="SIDE" type="string"/>
+<Field label="FROMSTREET" name="FROMSTREET" type="string"/>
+<Field label="DIRECTION" name="DIRECTION" type="string"/>
+<Field label="SITEID" name="SITEID" type="string"/>
+<Field label="WARD" name="WARD" type="integer"/>
+<Field label="BIA" name="BIA" type="string"/>
+<Field label="ASSETTYPE" name="ASSETTYPE" type="string"/>
+<Field label="STATUS" name="STATUS" type="string"/>
+<Field label="BARCODE" name="BARCODE" type="string"/>
+<Field label="SDE_STATE_ID" name="SDE_STATE_ID" type="integer"/>
+<Field label="X" name="X" type="number"/>
+<Field label="Y" name="Y" type="number"/>
+<Field label="LONGITUDE" name="LONGITUDE" type="number"/>
+<Field label="LATITUDE" name="LATITUDE" type="number"/>
+<Field label="geometry" name="geometry" type="string"/>
+<Field eofAsDelimiter="true" label="neighbourhood" name="neighbourhood" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata2">
+<Record fieldDelimiter="," name="V1_Benches" previewAttachment="${DATAIN_DIR}/V1_Benches.csv" previewAttachmentCharset="UTF-8" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field label="" name="_" type="integer"/>
+<Field label="_id" name="_id" type="integer"/>
+<Field label="OBJECTID" name="OBJECTID" type="integer"/>
+<Field label="ID" name="ID" type="string"/>
+<Field label="ADDRESSNUMBERTEXT" name="ADDRESSNUMBERTEXT" type="string"/>
+<Field label="ADDRESSSTREET" name="ADDRESSSTREET" type="string"/>
+<Field label="FRONTINGSTREET" name="FRONTINGSTREET" type="string"/>
+<Field label="SIDE" name="SIDE" type="string"/>
+<Field label="FROMSTREET" name="FROMSTREET" type="string"/>
+<Field label="DIRECTION" name="DIRECTION" type="string"/>
+<Field label="SITEID" name="SITEID" type="string"/>
+<Field label="WARD" name="WARD" type="integer"/>
+<Field label="BIA" name="BIA" type="string"/>
+<Field label="ASSETTYPE" name="ASSETTYPE" type="string"/>
+<Field label="STATUS" name="STATUS" type="string"/>
+<Field label="BARCODE" name="BARCODE" type="string"/>
+<Field label="SDE_STATE_ID" name="SDE_STATE_ID" type="integer"/>
+<Field label="X" name="X" type="number"/>
+<Field label="Y" name="Y" type="number"/>
+<Field label="LONGITUDE" name="LONGITUDE" type="number"/>
+<Field label="LATITUDE" name="LATITUDE" type="number"/>
+<Field label="geometry" name="geometry" type="string"/>
+<Field eofAsDelimiter="true" label="neighbourhood" name="neighbourhood" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata4">
+<Record fieldDelimiter="," name="V1_Benches" previewAttachment="${DATAIN_DIR}/V1_Benches.csv" previewAttachmentCharset="UTF-8" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field label="" name="_" type="integer"/>
+<Field label="_id" name="_id" type="integer"/>
+<Field label="OBJECTID" name="OBJECTID" type="integer"/>
+<Field label="ID" name="ID" type="string"/>
+<Field label="ADDRESSNUMBERTEXT" name="ADDRESSNUMBERTEXT" type="string"/>
+<Field label="ADDRESSSTREET" name="ADDRESSSTREET" type="string"/>
+<Field label="FRONTINGSTREET" name="FRONTINGSTREET" type="string"/>
+<Field label="SIDE" name="SIDE" type="string"/>
+<Field label="FROMSTREET" name="FROMSTREET" type="string"/>
+<Field label="DIRECTION" name="DIRECTION" type="string"/>
+<Field label="SITEID" name="SITEID" type="string"/>
+<Field label="WARD" name="WARD" type="integer"/>
+<Field label="BIA" name="BIA" type="string"/>
+<Field label="ASSETTYPE" name="ASSETTYPE" type="string"/>
+<Field label="STATUS" name="STATUS" type="string"/>
+<Field label="BARCODE" name="BARCODE" type="string"/>
+<Field label="SDE_STATE_ID" name="SDE_STATE_ID" type="integer"/>
+<Field label="X" name="X" type="number"/>
+<Field label="Y" name="Y" type="number"/>
+<Field label="LONGITUDE" name="LONGITUDE" type="number"/>
+<Field label="LATITUDE" name="LATITUDE" type="number"/>
+<Field label="geometry" name="geometry" type="string"/>
+<Field eofAsDelimiter="true" label="neighbourhood" name="neighbourhood" type="string"/>
+</Record>
+</Metadata>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/MudHens" id="JDBC1" jdbcSpecific="MYSQL" name="MudHens" password="Bcwwcb1311!!" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/MudHens" id="JDBC0" jdbcSpecific="MYSQL" name="NewConnection" password="Bcwwcb1311!!" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/MudHens" id="JDBC2" jdbcSpecific="MYSQL" name="NewConnection" password="Bcwwcb1311!!" type="JDBC" user="root"/>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary/>
+</Global>
+<Phase number="0">
+<Node aggregateKey="neighbourhood" guiName="Aggregation Per Neighborhood" guiX="554" guiY="428" id="AGGREGATION_PER_NEIGHBORHOOD" mapping="$Neighborhood:=$neighbourhood;$BenchCount:=count();" type="AGGREGATE"/>
+<Node dbConnection="JDBC1" guiName="DatabaseReader" guiX="114" guiY="106" id="DATABASE_READER" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[SELECT NeighborhoodPK, Name, AVG(Price) AS Average_Price
+FROM 
+(SELECT AirPK, Bedrooms, CAST(REPLACE(Price,'$' ,'') AS UNSIGNED) As Price, N.Name, NeighborhoodPK
+FROM AirBnB A
+LEFT JOIN
+location L
+ON A.LocationFk = L.LocationPK
+LEFT JOIN 
+Neighborhood N
+ON L.NeighborhoodFK = N.NeighborhoodPK
+WHERE Bedrooms = 3) Temp
+GROUP BY Name;]]></attr>
+</Node>
+<Node dbConnection="JDBC1" dbTable="BenchPrice" fieldMap="$NeighborhoodFK:=NeighborhoodFK;$Neighborhood:=Neighborhood;$BenchCount:=BenchCount;$AvgPrice:=AvgPrice;$AvgPricePerBench:=AvgPricePerBench;" guiName="DatabaseWriter" guiX="1370" guiY="183" id="DATABASE_WRITER" type="DB_OUTPUT_TABLE"/>
+<Node guiName="ExtHashJoin" guiX="947" guiY="151" id="EXT_HASH_JOIN" joinKey="$Name=$Neighborhood" type="EXT_HASH_JOIN">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.NeighborhoodFK = $in.0.NeighborhoodPK;
+	$out.0.Neighborhood = nvl($in.0.Name, "other");
+	$out.0.BenchCount = nvl($in.1.BenchCount, 0);
+	$out.0.AvgPrice = nvl($in.0.Average_Price, 0.0);
+	$out.0.AvgPricePerBench = (nvl($in.0.Average_Price, 0.0) /  nvl($in.1.BenchCount, 0));
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="ExtSort" guiX="347" guiY="400" id="EXT_SORT" sortKey="neighbourhood(a)" type="EXT_SORT"/>
+<Node fileURL="${DATAIN_DIR}/V1_Benches.csv" guiName="FlatFileReader" guiX="114" guiY="259" id="FLAT_FILE_READER" type="FLAT_FILE_READER"/>
+<Edge fromNode="AGGREGATION_PER_NEIGHBORHOOD:0" guiBendpoints="" guiRouter="Manhattan" id="Edge13" inPort="Port 1 (slave)" metadata="Metadata5" outPort="Port 0 (out)" toNode="EXT_HASH_JOIN:1"/>
+<Edge fromNode="DATABASE_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge14" inPort="Port 0 (driver)" metadata="Metadata8" outPort="Port 0 (out)" toNode="EXT_HASH_JOIN:0"/>
+<Edge fromNode="EXT_HASH_JOIN:0" guiBendpoints="" guiRouter="Manhattan" id="Edge19" inPort="Port 0 (in)" metadata="Metadata7" outPort="Port 0 (out)" toNode="DATABASE_WRITER:0"/>
+<Edge fromNode="EXT_SORT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (in)" metadata="Metadata6" outPort="Port 0 (out)" toNode="AGGREGATION_PER_NEIGHBORHOOD:0"/>
+<Edge fromNode="FLAT_FILE_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge11" inPort="Port 0 (in)" metadata="Metadata4" outPort="Port 0 (output)" toNode="EXT_SORT:0"/>
+</Phase>
+<Phase number="1">
+<Node dbConnection="JDBC1" guiName="DatabaseReader" guiX="135" guiY="583" id="DATABASE_READER1" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[SELECT Neighborhood, BenchCount, AvgPrice, AvgPricePerBench 
+FROM BenchPrice
+ORDER BY AvgPrice DESC;]]></attr>
+</Node>
+<Node existingSheetsActions="CLEAR_SHEETS" fileURL="${DATAOUT_DIR}/BenchPrice.xlsx" guiName="SpreadsheetDataWriter" guiX="542" guiY="583" id="SPREADSHEET_DATA_WRITER" sheet="Sheet0" type="SPREADSHEET_WRITER" writeMode="OVERWRITE_SHEET_IN_MEMORY">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mapping>
+    <globalAttributes>
+        <orientation>VERTICAL</orientation>
+        <step>1</step>
+        <writeHeader>true</writeHeader>
+    </globalAttributes>
+    <defaultSkip>1</defaultSkip>
+    <headerGroups>
+        <headerGroup skip="1">
+            <cloverField>Neighborhood</cloverField>
+            <headerRanges>
+                <headerRange begin="A1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>BenchCount</cloverField>
+            <headerRanges>
+                <headerRange begin="B1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>AvgPrice</cloverField>
+            <headerRanges>
+                <headerRange begin="C1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>AvgPricePerBench</cloverField>
+            <headerRanges>
+                <headerRange begin="D1"/>
+            </headerRanges>
+        </headerGroup>
+    </headerGroups>
+</mapping>
+]]></attr>
+</Node>
+<Edge fromNode="DATABASE_READER1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge21" inPort="Port 0 (input)" metadata="Metadata9" outPort="Port 0 (out)" toNode="SPREADSHEET_DATA_WRITER:0"/>
+</Phase>
+</Graph>

@@ -1,0 +1,29 @@
+body {
+	background-color:AntiqueWhite;
+}
+
+header {
+	background-color:AntiqueWhite;
+}
+
+.top-buffer { 
+	margin-top:20px; 
+}
+	
+.header {
+	text-align: center;
+	color: brown;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.search {
+	text-align: center;
+}
+
+.inline {
+	display: inline;
+}
+
+.navbar {
+	background-color:AntiqueWhite;
+}

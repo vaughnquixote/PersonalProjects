@@ -1,0 +1,22 @@
+h1 {
+	font-size : 20pt;
+	font-family : Verdana, Geneva, sans-serif;
+}
+h4 {
+	font-size : 14pt;
+	font-family : Verdana, Geneva, sans-serif;
+}
+}
+
+.center {
+  text-align: center;
+}
+
+.container {
+	text-align: center;
+	
+}
+
+body {
+	font-family : Verdana, Geneva, sans-serif;
+}
